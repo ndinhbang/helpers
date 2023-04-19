@@ -10,3 +10,15 @@ if (!function_exists('blink')) {
     }
 }
 
+if (!function_exists('abbreviated')) {
+    /**
+     * @param $str
+     * @return string
+     */
+    function abbreviated($str): string
+    {
+        preg_match_all('/\b\w/u', $str, $matches);
+        return implode("", $matches[0]);
+    }
+}
+
